@@ -5,10 +5,13 @@
 // // Automatically: JavaScript variables are automatically declared and initialized when assigned a value.
 // // Using var: The var keyword is used to declare a variable, and it can be reassigned.
 // var variableVar = 'value';
+// var is function scoped
 // // Using let: The let keyword is used to declare a variable, and it can be reassigned.
 // let variableLet = 'value';
+// // let is block scoped
 // // Using const: The const keyword is used to declare a constant, and it cannot be reassigned.
 // const variableConst = 'value';
+// const is block scoped
 
 
 // let name = 'John Doe'; // string
@@ -177,6 +180,143 @@
 // let num = 'hello' || 123 ;  // This expression will evaluate to 'hello' because 'hello' is a truthy value and the OR operator will return the first truthy value it encounters.
 // console.log(num); // Output: hello
 // console.log(num===123); // This will log false to the console because num is actually 'hello', not 123.
+
+
+
+
+//  **1. String Methods**
+// String methods are used to manipulate and work with text data.
+
+// | **Method**              | **Description**                                                                 |
+// |--------------------------|---------------------------------------------------------------------------------|
+// | `charAt(index)`          | Returns the character at the specified index.                                  |
+// | `charCodeAt(index)`      | Returns the Unicode of the character at the specified index.                   |
+// | `concat(string2, ...)`   | Joins two or more strings.                                                     |
+// | `includes(substring)`    | Checks if a string contains the given substring.                               |
+// | `indexOf(substring)`     | Returns the index of the first occurrence of the substring, or `-1` if not found. |
+// | `lastIndexOf(substring)` | Returns the index of the last occurrence of the substring.                     |
+// | `slice(start, end)`      | Extracts a section of the string.                                              |
+// | `substring(start, end)`  | Similar to `slice`, but does not accept negative indices.                      |
+// | `replace(search, replaceWith)` | Replaces occurrences of a substring.                                    |
+// | `split(separator)`       | Splits a string into an array of substrings.                                   |
+// | `toLowerCase()`          | Converts the string to lowercase.                                              |
+// | `toUpperCase()`          | Converts the string to uppercase.                                              |
+// | `trim()`                 | Removes whitespace from both ends of a string.                                 |
+// | `startsWith(substring)`  | Checks if the string starts with the given substring.                          |
+// | `endsWith(substring)`    | Checks if the string ends with the given substring.                            |
+
+// ---
+
+//  2. Array Methods**
+// Array methods are used to manipulate and process arrays.
+
+// | **Method**             | **Description**                                                                 |
+// |-------------------------|---------------------------------------------------------------------------------|
+// | `push(element)`        | Adds an element to the end of the array.                                        |
+// | `pop()`                | Removes and returns the last element of the array.                              |
+// | `shift()`              | Removes and returns the first element of the array.                             |
+// | `unshift(element)`     | Adds an element to the beginning of the array.                                  |
+// | `splice(start, count)` | Adds/removes elements from an array.                                            |
+// | `slice(start, end)`    | Returns a shallow copy of a portion of the array.                               |
+// | `concat(array2, ...)`  | Combines two or more arrays.                                                    |
+// | `join(separator)`      | Converts an array to a string with elements separated by `separator`.           |
+// | `indexOf(element)`     | Returns the first index of the element, or `-1` if not found.                   |
+// | `lastIndexOf(element)` | Returns the last index of the element, or `-1` if not found.                    |
+// | `forEach(callback)`    | Executes a callback function for each array element.                            |
+// | `map(callback)`        | Creates a new array with results of calling `callback` on each element.         |
+// | `filter(callback)`     | Creates a new array with elements that pass the `callback` condition.           |
+// | `reduce(callback, initialValue)` | Reduces the array to a single value based on `callback`.              |
+// | `find(callback)`       | Returns the first element that satisfies the condition.                         |
+// | `findIndex(callback)`  | Returns the index of the first element that satisfies the condition.            |
+// | `every(callback)`      | Checks if every element satisfies the condition.                                |
+// | `some(callback)`       | Checks if at least one element satisfies the condition.                         |
+// | `sort()`               | Sorts the array (by default, lexicographically).                                |
+// | `reverse()`            | Reverses the order of elements in the array.                                    |
+// | `flat(depth)`          | Flattens nested arrays by the specified `depth`.                                |
+// | `includes(element)`    | Checks if the array contains the specified element.                             |
+
+// ---
+
+// **3. Object Methods**
+// Object methods are used for manipulating and querying objects.
+
+// | **Method**                  | **Description**                                                                 |
+// |-----------------------------|---------------------------------------------------------------------------------|
+// | `Object.keys(object)`       | Returns an array of the object's keys.                                         |
+// | `Object.values(object)`     | Returns an array of the object's values.                                       |
+// | `Object.entries(object)`    | Returns an array of `[key, value]` pairs.                                      |
+// | `Object.assign(target, source)` | Copies properties from source object(s) to the target object.             |
+// | `Object.freeze(object)`     | Freezes the object, making it immutable.                                       |
+// | `Object.seal(object)`       | Prevents adding/removing properties but allows modifying existing ones.        |
+// | `Object.is(obj1, obj2)`     | Compares two values for strict equality (including special cases like NaN).    |
+// | `Object.create(proto)`      | Creates a new object with the specified prototype.                             |
+// | `Object.hasOwnProperty(key)`| Checks if the object has the specified property.                               |
+
+// ---
+
+//  **4. Number Methods**
+// Number methods are used to manipulate numbers.
+
+// | **Method**        | **Description**                                                                 |
+// |--------------------|---------------------------------------------------------------------------------|
+// | `toFixed(digits)` | Formats the number with the specified number of decimal places.                 |
+// | `toString()`      | Converts the number to a string.                                                |
+// | `toExponential(digits)` | Returns the number in exponential notation with specified decimals.       |
+// | `isFinite(value)` | Checks if the value is a finite number.                                         |
+// | `isNaN(value)`    | Checks if the value is `NaN`.                                                  |
+// | `parseInt(string)`| Converts a string to an integer.                                               |
+// | `parseFloat(string)` | Converts a string to a floating-point number.                               |
+
+// ---
+
+//  **5. Math Methods**
+// Math methods provide mathematical functions.
+
+// | **Method**       | **Description**                                                                 |
+// |-------------------|---------------------------------------------------------------------------------|
+// | `Math.abs(x)`    | Returns the absolute value of `x`.                                             |
+// | `Math.ceil(x)`   | Rounds `x` up to the nearest integer.                                           |
+// | `Math.floor(x)`  | Rounds `x` down to the nearest integer.                                         |
+// | `Math.round(x)`  | Rounds `x` to the nearest integer.                                              |
+// | `Math.max(a, b, ...)` | Returns the largest number.                                                |
+// | `Math.min(a, b, ...)` | Returns the smallest number.                                               |
+// | `Math.pow(base, exp)` | Returns `base` raised to the power of `exp`.                               |
+// | `Math.sqrt(x)`   | Returns the square root of `x`.                                                 |
+// | `Math.random()`  | Returns a random number between `0` and `1`.                                    |
+
+// ---
+
+//  **6. Date Methods**
+// Date methods are used to manipulate and format dates.
+
+// | **Method**            | **Description**                                                                 |
+// |------------------------|---------------------------------------------------------------------------------|
+// | `Date.now()`          | Returns the current timestamp.                                                 |
+// | `getFullYear()`       | Gets the 4-digit year of a date.                                               |
+// | `getMonth()`          | Gets the month (0-11) of a date.                                               |
+// | `getDate()`           | Gets the day of the month (1-31).                                              |
+// | `getDay()`            | Gets the day of the week (0-6).                                                |
+// | `getHours()`          | Gets the hours (0-23).                                                         |
+// | `getMinutes()`        | Gets the minutes (0-59).                                                       |
+// | `getSeconds()`        | Gets the seconds (0-59).                                                       |
+// | `setFullYear(year)`   | Sets the year.                                                                 |
+// | `setMonth(month)`     | Sets the month (0-11).                                                         |
+
+// ---
+
+//  **7. Utility Methods**
+// JavaScript also provides utility methods like `alert()`, `console.log()`, and `setTimeout()`.
+
+// | **Method**            | **Description**                                                                 |
+// |------------------------|---------------------------------------------------------------------------------|
+// | `alert(message)`      | Displays an alert box with a message.                                           |
+// | `console.log(message)`| Logs a message to the browser console.                                          |
+// | `setTimeout(func, ms)`| Calls a function after a specified delay (in milliseconds).                     |
+// | `setInterval(func, ms)` | Repeatedly calls a function at specified intervals.                          |
+
+
+
+
 
 
 // // Loops

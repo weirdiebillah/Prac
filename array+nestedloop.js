@@ -1,6 +1,38 @@
 
 // JavaScript Array and Nested Loop Example
 
+// // Loops
+// // For Loop
+// for (let i = 0; i < 5; i++) {
+//   console.log(i);
+// }
+
+// // While Loop
+// let j = 0;
+// while (j < 5) {
+//   console.log(j);
+//   j++;
+// }
+
+// // Do-While Loop
+// let k = 0;
+// do {
+//   console.log(k);
+//   k++;
+// } while (k < 5);
+
+// // For-Of Loop
+// let numbers = [0, 1, 2, 3, 4];
+// for (let number of numbers) {
+//   console.log(number);
+// }
+
+// // For-In Loop
+// let person = { name: 'John Doe', age: 30, country: 'USA' };
+// for (let key in person) {
+//   console.log(`${key}: ${person[key]}`);
+// }
+
 // Array Methods Example
 
 // Create an array
