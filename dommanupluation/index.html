@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+</head>
+
+<body class="prose">
+    <h1 class="text-red-800">Hello world</h1>
+    <div class="flex space-x-5 mx-5">
+        <img class="tumb"
+            src="https://i0.wp.com/picjumbo.com/wp-content/uploads/microsoft-logo-energetic-glowing-lighting-visual-free-image.jpeg?w=210&quality=70"
+            large="https://i0.wp.com/picjumbo.com/wp-content/uploads/microsoft-logo-energetic-glowing-lighting-visual-free-image.jpeg?w=1210&quality=70"
+            alt="">
+        <img class="tumb"
+            src="https://i0.wp.com/picjumbo.com/wp-content/uploads/ooops-microsoft-outage-bsod-blue-screen-free-photo.jpg?w=210&quality=70"
+            large="https://i0.wp.com/picjumbo.com/wp-content/uploads/ooops-microsoft-outage-bsod-blue-screen-free-photo.jpg?w=1210&quality=70"
+            alt="">
+        <img class="tumb"
+            src="https://i0.wp.com/picjumbo.com/wp-content/uploads/flying-drone-quadcopter.jpg?w=210&quality=70"
+            large="https://i0.wp.com/picjumbo.com/wp-content/uploads/flying-drone-quadcopter.jpg?w=1210&quality=70"
+            alt="">
+
+    </div>
+    <div id="bigger">
+
+    </div>
+
+    <script>
+        const imgs = document.querySelectorAll('.tumb');
+        const bigger = document.getElementById('bigger');
+        imgs.forEach(img => {
+            img.addEventListener('click', function () {
+                const large = this.getAttribute('large');
+                const img = document.createElement('img');
+                img.src = large;
+                img.style.width = '100%';
+                img.style.marginLeft = ' 50px';
+                bigger.innerHTML = '';
+                bigger.appendChild(img);
+            })
+        });
+    </script>
+</body>
+
+</html>

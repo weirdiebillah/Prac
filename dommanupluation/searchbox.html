@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+</head>
+
+<body>
+    <h1>Searchbox Event</h1>
+    <input type="text" id="search">
+    <select id="country">
+        <option value="0">Select ur country</option>
+    </select>
+    <script src="countries.js"></script>
+    <script>
+        const search = document.getElementById("search");
+        const dropdown = document.getElementById('country');
+        search.addEventListener('input', function () {
+            dropdown.innerHTML = "<option value='0'>Select a country</option>";
+            const searchValue = this.value;
+            options = "";
+            for (let i = 0; i < countryList.length; i++) {
+                if (countryList[i].toLowerCase().startsWith(searchValue.toLowerCase())) {
+                    options += `<option value="${countryList[i]}">${countryList[i]}</option>`;
+                }
+            }
+            dropdown.innerHTML += options;
+        })
+        dropdown.addEventListener('change', function () {
+            console.log(this.value);
+        })
+        options = "";
+        countryList.forEach(country => {
+            //string literal
+            options += `<option value="${country}">${country}</option>`;
+
+        })
+        dropdown.innerHTML += options;
+
+    </script>
+
+</body>
+
+
+</html>

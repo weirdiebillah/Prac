@@ -4,123 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            width: 100%;
-            height: 100vh;
-            background-color: #000;
-        }
-
-        .calculator-input-container {
-            display: flex;
-            align-items: flex-end;
-            width: 100%;
-            height: 100px;
-            background-color: #000;
-        }
-
-        .calculator-input-text {
-            width: 90%;
-            height: 100%;
-            background-color: #000;
-            color: #fff;
-            font-size: 2rem;
-            text-align: right;
-            border: none;
-        }
-
-        .calculator-buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            height: 300px;
-            background-color: #000;
-            gap: 5px;
-            justify-content: center;
-        }
-
-        .input-button {
-            width: 30%;
-            height: 50%;
-            background-color: #fff;
-            color: #000;
-            font-size: 1.5rem;
-            border: none;
-        }
-    </style>
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="calculator-input-container">
-        <input type="text" id="input" placeholder="0" class="calculator-input-text" readonly>
-    </div>
-    <div class="calculator-buttons-container">
-        <button class="input-button" value="1" onclick="updateInput(this.value)">1</button>
-        <button class="input-button" value="2" onclick="updateInput(this.value)">2</button>
-        <button class="input-button" value="3" onclick="updateInput(this.value)">3</button>
-        <button class="input-button" value="4" onclick="updateInput(this.value)">4</button>
-        <button class="input-button" value="5" onclick="updateInput(this.value)">5</button>
-        <button class="input-button" value="6" onclick="updateInput(this.value)">6</button>
-        <button class="input-button" value="7" onclick="updateInput(this.value)">7</button>
-        <button class="input-button" value="8" onclick="updateInput(this.value)">8</button>
-        <button class="input-button" value="9" onclick="updateInput(this.value)">9</button>
-        <button class="input-button" value="." onclick="updateInput(this.value)">.</button>
-        <button class="input-button" value="+" onclick="updateOperator(this.value)">+</button>
-        <button class="input-button" value="-" onclick="updateOperator(this.value)">-</button>
-        <button class="input-button" value="*" onclick="updateOperator(this.value)">*</button>
-        <button class="input-button" value="/" onclick="updateOperator(this.value)">/</button>
-        <button class="input-button" value="^" onclick="updateOperator(this.value)"><sup>^</sup></button>
-        <button class="input-button" value="C" onclick="clearInput()">C</button>
-        <button class="input-button" onclick="calculate()">=</button>
-    </div>
+
+    <form name="selectForm">
+        <label for="musicTypes">Choose some music types, then click the button below:</label>
+        <select id="musicTypes" name="musicTypes" multiple>
+            <option selected>R&B</option>
+            <option>Jazz</option>
+            <option>Blues</option>
+            <option>New Age</option>
+            <option>Classical</option>
+            <option>Opera</option>
+        </select>
+        <button id="btn" type="button">How many are selected?</button>
+    </form>
+
+    <script>
+        function countSelected(selectObject) {
+            let numberSelected = 0;
+            for (let i = 0; i < selectObject.options.length; i++) {
+                if (selectObject.options[i].selected) {
+                    numberSelected++;
+                }
+            }
+            return numberSelected;
+        }
+
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            const musicTypes = document.selectForm.musicTypes;
+            console.log(`You have selected ${countSelected(musicTypes)} option(s).`);
+        });
+
+    </script>
 
 </body>
-<script>
-    let number = "";
-    let operator = "";
-    let result = "";
-
-    function updateInput(value) {
-        if (result) {
-            number = value;
-            result = "";
-            document.getElementById('input').value = "";
-        }
-        number += value;
-        document.getElementById('input').value = number;
-    }
-
-    function updateOperator(value) {
-        if (number) {
-            operator = value;
-            number += value;
-            document.getElementById('input').value = number;
-        }
-    }
-
-    function clearInput() {
-        number = "";
-        operator = "";
-        result = "";
-        document.getElementById('input').value = "0";
-    }
-
-    function calculate() {
-        if (number && operator) {
-            let modifiedNumber = number.replace(/\^/g, "**");
-            let result = eval(modifiedNumber);
-            document.getElementById('input').value = result;
-            number = result;
-            operator = "";
-        }
-    }
-</script>
 
 </html>

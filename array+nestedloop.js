@@ -32,36 +32,6 @@
 // for (let key in person) {
 //   console.log(`${key}: ${person[key]}`);
 // }
-
-// Array Methods Example
-
-// Create an array
-// let arr = [1, 2, 3, 4, 5];
-
-// Push: add an element to the end of the array
-// arr.push(6);
-// console.log(arr); // Output: [1, 2, 3, 4, 5, 6]
-
-// Pop: remove the last element from the array
-// let lastElement = arr.pop();
-// console.log(arr); // Output: [1, 2, 3, 4, 5]
-// console.log(lastElement); // Output: 6
-
-// Length: get the number of elements in the array
-// console.log(arr.length); // Output: 5
-
-// Shift: remove the first element from the array
-// let firstElement = arr.shift();
-// console.log(arr); // Output: [2, 3, 4, 5]
-// console.log(firstElement); // Output: 1
-
-// Unshift: add an element to the beginning of the array
-// arr.unshift(0);
-// console.log(arr); // Output: [0, 2, 3, 4, 5]
-
-
-// let names =  ['John', 'Mary', 'David', 'Emily'];
-
  
 
 // This section iterates through an array of names and logs each name to the console
